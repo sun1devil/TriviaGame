@@ -1,10 +1,12 @@
 
 
 // Global variables
-var rightAnswer = 0
-var wrongAnswer = 0
-var percentCorrect=0
-var userAnswer
+var timeLeft = 1500;
+var rightAnswer = 0;
+var wrongAnswer = 0;
+var total= rightAnswer + wrongAnswer;
+var score= rightAnswer/total;
+var userAnswers;
 var questions = [{
     Q1: 'There are how many federal income tax brackets?',
     Opt: ['four', 'six', 'two'],
@@ -19,10 +21,16 @@ var questions = [{
     Q3:"What currency is used by many European countries?",
     Opt: ['shakes', 'Ben Frank', 'Uncle Sam'],
     RA: 'six'
-},
+}
 ]
-    
-//Loop to capture and compare
+
+ questions[0].RA;
+ questions[1].RA;
+ questions[2].RA;
+ console.log(questions[0].RA);
+ console.log(questions[1].RA); 
+ console.log(questions[2].RA);    
+ //Loop to capture and compare
 
 // //conditionals
 //     if(userAnswer === RA){
@@ -37,34 +45,51 @@ var questions = [{
 // ??var question3 
 
 // functions //
-$('#start').on('click', function(start) {    
+//onclick of start
+$('#start').on('click', function() {    
     //empty main content
-    $("main-content").empty;
+    $("#start-content").hide();
+    $("#results").hide();
     //display all questions
     //hide start/reset button display done button
-    $('start').hide();
-    $('reset').hide();
+    $('#start').hide();
+    $('#reset').hide();
     //start timer
-    //prevent selecting 2
- 
-
+    //ser
 })
 $('#done').on("click", function(){
     //or timer = 0.0
     //empty questions content
-    $("questions").empty
     //Capture user Answers?
+    var radio1 = document.getElementById("r1q3");
+    console.log(radio1.checked);
+    console.log(radio1.value);
+    if(r1q3.checked){
+       console.log("testing")
+        if('six'=== questions[0].RA){
+            rightAnswer++;
+            console.log(rightAnswer);
+        } else{
+            wrongAnswer++;
+            console.log(wrongAnswer);
+        }       
+    }
     //compare user answers with object key/value
     // calculate results
     // display results
     //hide start/done button display reset
-    $('start').hide();
-    $('reset').hide();
+    $('#start').hide();
+    $('#done').hide();
+    $('#home').hide();
+    $('#questions').hide();
 })
 
 $('#reset').on("click", function(){
-    //empty reults
-    $("results").empty;
+    //Hide Everything
+    $("#results").hide();
+    $('#questions').hide();
+    $('#reset').hide();
+    $('#done').hide();
     // Return to start
 })
 
