@@ -1,0 +1,33 @@
+/* header{background-image: url("../images/chart.jpg"); */
+        text-align: center;
+}
+
+body{
+    /* background-image: url("../images/currencies.jpg"); */
+    text-align: center;
+}
+#gamecontent{
+    background-color:lightgray;
+    height: 90%;
+}
+
+/* @media screen and (max-width: 980px){
+  
+    }
+            
+    
+       
+     
+    
+  
+  
+    @media screen and (max-width: 768px){
+       
+      
+    }
+          
+   
+  
+  
+  @media screen and (max-width: 640px){
+      } */
