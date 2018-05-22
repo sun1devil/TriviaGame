@@ -4,87 +4,125 @@
 var timeLeft = 1500;
 var rightAnswer = 0;
 var wrongAnswer = 0;
-var total= rightAnswer + wrongAnswer;
-var score= rightAnswer/total;
+var total = rightAnswer + wrongAnswer;
+var score = rightAnswer / total;
 var userAnswers;
-var questions = [{
-    Q1: 'There are how many federal income tax brackets?',
-    Opt: ['four', 'six', 'two'],
-    RA: 'six'
-},
-{
-    Q2:'Who wrote “In this world nothing can be said to be certain, except death and taxes”?',
-    Opt: ['dollar', 'pound', 'euro'],
-    RA: 'euro'
-},
-{
-    Q3:"What currency is used by many European countries?",
-    Opt: ['shakes', 'Ben Frank', 'Uncle Sam'],
-    RA: 'six'
-}
+var unanswered;
+var questions = [
+    {
+        Q1: 'There are how many federal income tax brackets?',
+        Opt: ['four', 'six', 'two'],
+        RA: 'six'
+    },
+    {
+        Q2: 'Who wrote “In this world nothing can be said to be certain, except death and taxes”?',
+        Opt: ['shakes', 'Ben Frank', 'Uncle Sam'],
+        RA: 'euro'
+    },
+    {
+        Q3: "What currency is used by many European countries?",
+        Opt: ['dollar', 'pound', 'euro'],
+        RA: 'six'
+    }
 ]
 
- questions[0].RA;
- questions[1].RA;
- questions[2].RA;
- console.log(questions[0].RA);
- console.log(questions[1].RA); 
- console.log(questions[2].RA);    
- //Loop to capture and compare
+//  questions[0].RA;
+//  questions[1].RA;
+//  questions[2].RA;
 
-// //conditionals
-//     if(userAnswer === RA){
-//     //count and ++ rightAnswer
-    
-// }   else{
-//     //count and ++ wrongAnswer
-// }
-
-
-// ??var question2
-// ??var question3 
+//Loop to capture and compare
 
 // functions //
-//onclick of start
-$('#start').on('click', function() {    
-    //empty main content
-    $("#start-content").hide();
+// start page //
+$(document).ready(function () {
+    $('#questions').hide();
     $("#results").hide();
+    $('#reset').hide();
+    $('#done-button').hide();
+});
+
+//onclick of start
+$('#start').on('click', function () {
+    //empty main content
     //display all questions
     //hide start/reset button display done button
-    $('#start').hide();
-    $('#reset').hide();
+    function startime(){
+        var timeRemaining= 10;
+    timer = setInterval(function () {
+        $('#time-display').empty()
+        if (time >= 0) {
+            time--;
+            // display in html
+        }else {
+            clearInterval(timer);
+        }
+        }, 1000)
+    }
+
     //start timer
     //ser
 })
-$('#done').on("click", function(){
-    //or timer = 0.0
-    //empty questions content
-    //Capture user Answers?
-    var radio1 = document.getElementById("r1q3");
-    console.log(radio1.checked);
-    console.log(radio1.value);
-    if(r1q3.checked){
-       console.log("testing")
-        if('six'=== questions[0].RA){
-            rightAnswer++;
-            console.log(rightAnswer);
-        } else{
-            wrongAnswer++;
-            console.log(wrongAnswer);
-        }       
-    }
-    //compare user answers with object key/value
-    // calculate results
-    // display results
-    //hide start/done button display reset
+var answers = []
+$('#done').on("click", function () {
+
     $('#start').hide();
     $('#done').hide();
     $('#home').hide();
     $('#questions').hide();
-})
+    //or timer = 0.0
+    //empty questions content
+    //Capture user Answers?
+    var count = 1;
+    while (count < 4) {
+        var answer = $('input[name=q' + count + ']:checked').val();
+        console.log("answer", count, answer);
+        answers.push(answer);
+        count++;
+    }
+    console.log(questions[0].RA);
+    console.log(questions[1].RA);
+    console.log(questions[2].RA);
 
-$('#reset').on("click", function(){
+    if (answers.inludes(undefined)) {
+        answers.forEach(function (value) {
+            if (value === undefined) {
+                wrongAnswer++;
+                unanswered++;
+            }
+        })
+        // get total amount of times undefined is in array
+        // for each undefined wrong ++ and unanswered ++
+    } else {
+        for (var i = 0; i < questions.length; i++) {
+            // validate answers
+            if (answers[i] === questions[i].RA) {
+                rightAnswer++;
+            } else {
+                wrongAnswer++
+            }
+        }
+        // hide question and show results
+    }
+    // var radio1 = document.getElementById("r1q3");
+    // console.log(radio1.checked);
+    // console.log(radio1.value);
+    // if(r1q3.checked){
+    //    console.log("testing")
+    //     if('six'=== questions[0].RA){
+    //         rightAnswer++;
+    //         console.log(rightAnswer);
+    //     } else{
+    //         wrongAnswer++;
+    //         console.log(wrongAnswer);
+    //     }       
+})
+//compare user answers with object key/value
+// calculate results
+// display results
+//hide start/done button display reset
+
+
+$('#reset').on("click", function () {
     //Hide Everything
     $("#results").hide();
     $('#questions').hide();
@@ -93,7 +131,6 @@ $('#reset').on("click", function(){
     // Return to start
 })
 
-    
 
 
 

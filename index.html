@@ -15,87 +15,84 @@
     <header id="triviaheader">
         <div>
             <h1>Financial Trivia</h1>
+            <h4>Test Your Financial Knowledge!</h4>
+        </div>
+        <div id="home">
+           
+            <button id="start" class="btn btn-light">START GAME!</button>
+            <div id="time-display" class="hide">
+                <p>Time Left: <span id="timer">10</span></p>
+            </div>
+                 
         </div>
     </header>
-
-    <div class="container" id="gamecontent">
-        <div class="row">
-        </div>
-        <div class="col-md-1" id="blank-left">
-        </div>
-        <div class="col-md-10" id="start-content">
-            <div id="home">
-                <p>Test Your Financial Knowledge! Click start to begin
-                </p>
+    <div id='game-container' class="hide">
+        <div id='game-questions'></div>
+        <div id= "game-results"></div>
+    </div>
+       
+    <!-- <div class="container" id="gamecontent">
+            <div id='questions'>
             </div>
-        </div>
-        <div id='timer'>
-        </div>
-        <div id="questions">
-            <p>
-                <!-- <div class="custom-control custom-radio custom-control-inline">
-                            <input type="radio" id="customRadioInline1" value="Q1" name="customRadioInline1" class="custom-control-input">
-                            <label class="custom-control-label" for="customRadioInline1">six</label>
-                    </div>
-                        <div class="custom-control custom-radio custom-control-inline">
-                            <input type="radio" id="customRadioInline2" name="customRadioInline1" class="custom-control-input">
-                            <label class="custom-control-label" for="customRadioInline2">Or toggle this other custom radio</label>
-                        </div> -->
+               
                 <h3>There are how many federal income tax brackets?</h3>
-                <label>two</label>
-                <input type="radio" name="radSize" id="r1q1" value="two" />
-                <label for="sizeSmall">four</label>
-                <input type="radio" name="radSize" id="r2q1" value="four" />
-                <label for="sizeMed">six</label>
-                <input type="radio" name="radSize" id="r3q1" value="six" />
+                    <label>two</label>
+                        <input type="radio" name="q1" id="r1q1" value="two" />
+                    <label>four</label>
+                        <input type="radio" name="q1" id="r2q1" value="four" />
+                    <label>six</label>
+                        <input type="radio" name="q1" id="r3q1" value="six" />
                 <h3>Who wrote “In this world nothing can be said to be certain, except death and taxes”?</h3>
-                <label for="sizeSmall">William Shakespeare</label>
-                <input type="radio" name="radSize" id="r1q2"/>
-                <label for="sizeSmall">Benjamin Franklin</label>
-                <input type="radio" name="radSize" id="r2q2" />
-                <label for="sizeMed">Uncle Sam</label>
-                <input type="radio" name="radSize" id="r3q2" />
+                    <label>William Shakespeare</label>
+                        <input type="radio" name="q2" value="William Shakespeare" />
+                    <label>Benjamin Franklin</label>
+                        <input type="radio" name="q2" id="r2q2" value="Benjamin Franklin" />
+                    <label>Uncle Sam</label>
+                        <input type="radio" name="q2" id="r3q2" value="Uncle Sam"/>
                 <h3>What currency is used by many European countries?</h3>
-                <label>dollar</label>
-                <input type="radio" name="radSize" id="r1q3" />
-                <label for="sizeSmall">pound</label>
-                <input type="radio" name="radSize" id="r2q3" />
-                <label for="sizeMed">euro</label>
-                <input type="radio" name="radSize" id="r3q3" />
-            </p>
+                    <label>dollar</label>
+                        <input type="radio" name="q3" id="r1q3" value="dollar"/>
+                    <label>pound</label>
+                        <input type="radio" name="q3" id="r2q3" value="pound"/>
+                    <label>euro</label>
+                        <input type="radio" name="q3" id="r3q3" value="euro" />
+                <Div id="done-button">
+                    <button type="button" id="done" class="btn btn-light">DONE</button>
+                </Div>
+            </Div>
+            <div id="results">
+                    <h2>Your Results!</h2>
+                     <p>
+                        <h4 id="right"> Right:</h4>
+                        <h4 id="wrong"> Wrong:</h4>
+                        <h4 id="unanswered">Unanswered:</h4>
+                        <h4 id="score"> Score:</h4>  
+                    </p>
+                    <Div id="button">
+                        <button type="button" id="reset-button" class="btn btn-light">RESET</button>
+                    </Div>
+            </div>
+    </div>
+         -->
             <!-- timer -->
             <!-- questions radio button answers -->
             <!-- hide button -->
-        </div>
-        <div id="results">
-            <h2>Your Results!</h2>
-             <p>
-                 
-                     <h4 id="right"> Right:</h4>
-                     <h4 id="wrong"> Wrong:</h4>
-                     <h4 id="score"> Score:</h4>  
-                
-            </p>
-        </div>
+        
+        
 
-        <div class="col-md-1" id="blank-right">
-        </div>
-        <Div id="button">
-            <button type="button" id="start" class="btn btn-light">START</button>
-            <button type="button" id="done" class="btn btn-light">DONE</button>
-            <button type="button" id="reset" class="btn btn-light">RESET</button>
-        </Div>
-    </div>
+        
+        
+    
 
 
-    </body>
-    <footer id="triviafooter">
+   
+    <!-- <footer id="triviafooter">
         <Div>
             <p>&nbsp</p>
         </div>
-    </footer>
+    </footer> -->
     <script type="text/javascript" src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
-    <script type="text/javascript" src=".//assets/javascript/app.js"></script>
-
+    <script type="text/javascript" src="./assets/javascript/main.js"></script>
+</body>
 
 </html>
