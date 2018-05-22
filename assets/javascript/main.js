@@ -18,6 +18,11 @@ $(document).ready(function () {
             q:  'The Dow Jones industrial average is named for whom?',
             opt: ['Dow Chemical', 'Dowetta Jones', 'Charles Dow & Ed Jones'],
             ra: 'Charles Dow & Ed Jones'
+        },
+        {
+            q:  ' The word “tax” originates from?',
+            opt: ['The Latin taxo', 'The Greek taxum', 'Old English taxus'],
+            ra: 'The Latin taxo'
         }
         ]
     
@@ -131,7 +136,7 @@ $(document).ready(function () {
     // stop timer at 0
     // end game
     function startTimer(){
-        var timeRemaining = 100;
+        var timeRemaining = 20;
         $('#time-display').removeClass("hide");
         timer = setInterval (function () {
             $('#timer').text("");
